@@ -16,8 +16,10 @@
         </ul>
         <ul *ngIf="isLeads">
             <li><a class="nav-link scrollto"  [routerLink]="['/home']">Go to Home</a></li>
-            <li><a class="nav-link scrollto"  [routerLink]="['mortgage-leads']" routerLinkActive="active" >Mortgage Leads</a></li>
-            <li><a class="nav-link scrollto"  [routerLink]="['mca-leads']" routerLinkActive="active" >MCA Lead</a></li>
+            <li><a class="nav-link scrollto"  [routerLink]="['/mortgage-leads#contact']">Contact</a></li>
+            
+            <!-- <li><a class="nav-link scrollto"  [routerLink]="['mortgage-leads']" routerLinkActive="active" >Mortgage Leads</a></li>
+            <li><a class="nav-link scrollto"  [routerLink]="['mca-leads']" routerLinkActive="active" >MCA Lead</a></li> -->
           </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
