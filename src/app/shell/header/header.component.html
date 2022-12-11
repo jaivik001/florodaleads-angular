@@ -12,15 +12,18 @@
           <li><a class="nav-link scrollto"  href="#verticals">Verticals</a></li>
           <li><a class="nav-link scrollto"  [routerLink]="['mortgage-leads']" routerLinkActive="active" >Mortgage Leads</a></li>
           <li><a class="nav-link scrollto"  [routerLink]="['mca-leads']" routerLinkActive="active" >MCA Lead</a></li>
-          <li><a class="nav-link scrollto"  href="#contact" >Contact</a></li>
+          <li><a class="nav-link scrollto"  herf="#contact" routerLinkActive="active">Contact</a></li>
         </ul>
-        <ul *ngIf="isLeads">
+        <ul *ngIf="isLeads && isMortageLeads">
             <li><a class="nav-link scrollto"  [routerLink]="['/home']">Go to Home</a></li>
-            <li><a class="nav-link scrollto"  [routerLink]="['/mortgage-leads#contact']">Contact</a></li>
-            
-            <!-- <li><a class="nav-link scrollto"  [routerLink]="['mortgage-leads']" routerLinkActive="active" >Mortgage Leads</a></li>
-            <li><a class="nav-link scrollto"  [routerLink]="['mca-leads']" routerLinkActive="active" >MCA Lead</a></li> -->
-          </ul>
+            <li><a class="nav-link scrollto"  [routerLink]="['mortgage-leads']" routerLinkActive="active" >Mortgage Leads</a></li>
+            <li><a class="nav-link scrollto"  [routerLink]="['contact']" routerLinkActive="active">Contact</a></li>
+        </ul>
+        <ul *ngIf="isLeads && isMcaLeads">
+          <li><a class="nav-link scrollto"  [routerLink]="['/home']">Go to Home</a></li>
+          <li><a class="nav-link scrollto"  [routerLink]="['mca-leads']" routerLinkActive="active" >MCA Lead</a></li>
+          <li><a class="nav-link scrollto"  [routerLink]="['contact']" routerLinkActive="active">Contact</a></li>
+        </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
