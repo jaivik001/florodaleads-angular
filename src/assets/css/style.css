@@ -919,6 +919,37 @@ section#verticals {
   padding-top: 100px;
   padding-bottom: 221px;
 }
+
+.text-base-color {
+  color: #47b2e4
+   !important;
+}
+
+.title-medium {
+  font-size: 1.3rem!important;
+  line-height: 2.25rem!important;
+}
+.font-w-600 {
+  font-weight: 600!important;
+}
+.font-alt {
+  font-family: Montserrat,sans-serif!important;
+}
+.mx-3 {
+  margin-right: 1rem!important;
+  margin-left: 1rem!important;
+}
+.my-2 {
+  margin-top: 0.5rem!important;
+  margin-bottom: 0.5rem!important;
+}
+.d-inline-block {
+  display: inline-block!important;
+}
+/* *, ::after, ::before {
+  box-sizing: inherit;
+} */
+
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
@@ -1438,6 +1469,10 @@ section#verticals {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+section#contact {
+  padding-top: 100px;
+}
+
 .contact .info {
   border-top: 3px solid #47b2e4;
   border-bottom: 3px solid #47b2e4;
