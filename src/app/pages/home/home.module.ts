@@ -8,6 +8,7 @@ import { LayoutModule } from 'src/app/shell/layouts/layout.module';
 import { LinkDirective } from 'src/app/shared/directive/link.directive';
 import { McaLeadsComponent } from './mca-leads/mca-leads.component';
 import { MortgageLeadesComponent } from './mortgage-leades/mortgage-leades.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'mca-leads', component: McaLeadsComponent },
       { path: 'mortgage-leads', component: MortgageLeadesComponent },
+      { path: 'contact', component: ContactComponent }
     ]
   }
 ]
@@ -25,7 +27,8 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     McaLeadsComponent,
-    MortgageLeadesComponent
+    MortgageLeadesComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
