@@ -28,15 +28,24 @@ export class ContactComponent implements OnInit {
         Host: "smtp.elasticemail.com",
         Username: "7774devansh@gmail.com",
         Password: "0246575FACD99D483F7A651691C307816DB2",
-        To: this.contactForm.value.email,
+        To: "jaikpatel2001@gmail.com",
         From: "7774devansh@gmail.com",
         Subject: this.contactForm.value.subject,
-        Body: this.contactForm.value.message
+        Body: `<h2>Hello Admin,</h2><p>New message from ${this.contactForm.value.name}</p><p><b>Email :</b>${this.contactForm.value.email}</p><p><b>Subject :</b>${this.contactForm.value.subject}</p><p><b>Message :</b>${this.contactForm.value.message}</p>` 
       }
       ).then((message: any) => {
-        this, this.contactForm.reset();
-      });
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "7774devansh@gmail.com",
+          Password: "0246575FACD99D483F7A651691C307816DB2",
+          To: this.contactForm.value.email,
+          From: "7774devansh@gmail.com",
+          Subject: this.contactForm.value.subject,
+          Body: `<p>Hello ${this.contactForm.value.name},</p><p>Thank you for contacting us.</p><p> We appreciate your time and interest for submitting the request.<br> We will review your message and get back to you. </p> <p><br>Best Regards,</p>Florodaleads.` 
+        })        
+      }).then(() => {
+        this.contactForm.reset();
+      })
     }
-    
   }
 }
