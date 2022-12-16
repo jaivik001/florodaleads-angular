@@ -10,8 +10,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     FooterComponent,
-    HeaderComponent,
-    LinkDirective
+    HeaderComponent
   ],
   imports: [
     CommonModule,
