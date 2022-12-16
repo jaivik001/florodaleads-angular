@@ -23,6 +23,9 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     if (this.contactForm.valid) {
+      document.querySelector('.loading')?.classList.add('d-block');
+      document.querySelector('.error-message')?.classList.remove('d-block');
+      document.querySelector('.sent-message')?.classList.remove('d-block');
       this.contactForm.value;
       Email.send({
         Host: "smtp.elasticemail.com",
@@ -34,9 +37,10 @@ export class ContactComponent implements OnInit {
         Body: this.contactForm.value.message
       }
       ).then((message: any) => {
+        document.querySelector('.loading')?.classList.remove('d-block');
+        document.querySelector('.sent-message')?.classList.add('d-block');
         this, this.contactForm.reset();
       });
     }
-    
   }
 }
