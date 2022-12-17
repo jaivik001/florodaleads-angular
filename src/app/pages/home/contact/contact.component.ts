@@ -41,7 +41,7 @@ export class ContactComponent implements OnInit {
           To: this.contactForm.value.email,
           From: "7774devansh@gmail.com",
           Subject: this.contactForm.value.subject,
-          Body: `<p>Hello ${this.contactForm.value.name},</p><p>Thank you for contacting us.</p><p> We appreciate your time and interest for submitting the request.<br> We will review your message and get back to you. </p> <p><br>Best Regards,</p>Florodaleads.` 
+          Body: `<p>Hello ${this.contactForm.value.name},</p><p>Thank you for contacting us.</p><p> We appreciate your time and interest for submitting the request.<br> We will review your message and get back to you. </p> <p><br>Best Regards,</p>Floronaleads.` 
         })        
       }).then(() => {
         this.contactForm.reset();
