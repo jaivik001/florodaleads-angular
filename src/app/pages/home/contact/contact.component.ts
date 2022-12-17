@@ -23,6 +23,9 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     if (this.contactForm.valid) {
+      document.querySelector('.loading')?.classList.add('d-block');
+      document.querySelector('.error-message')?.classList.remove('d-block');
+      document.querySelector('.sent-message')?.classList.remove('d-block');
       this.contactForm.value;
       Email.send({
         Host: "smtp.elasticemail.com",
@@ -44,8 +47,11 @@ export class ContactComponent implements OnInit {
           Body: `<p>Hello ${this.contactForm.value.name},</p><p>Thank you for contacting us.</p><p> We appreciate your time and interest for submitting the request.<br> We will review your message and get back to you. </p> <p><br>Best Regards,</p>Floronaleads.` 
         })        
       }).then(() => {
-        this.contactForm.reset();
-      })
+        document.querySelector('.loading')?.classList.remove('d-block');
+        document.querySelector('.sent-message')?.classList.add('d-block');
+        this, this.contactForm.reset();
+      });
+
     }
   }
 }
