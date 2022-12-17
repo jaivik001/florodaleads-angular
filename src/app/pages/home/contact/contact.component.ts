@@ -49,6 +49,9 @@ export class ContactComponent implements OnInit {
       }).then(() => {
         document.querySelector('.loading')?.classList.remove('d-block');
         document.querySelector('.sent-message')?.classList.add('d-block');
+        setTimeout(() => {
+          document.querySelector('.sent-message')?.classList.remove('d-block');
+        }, 10000);
         this, this.contactForm.reset();
       });
 
