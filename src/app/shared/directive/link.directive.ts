@@ -8,7 +8,6 @@ export class LinkDirective {
   @HostListener('click', ['$event'])
 
   noop(event: MouseEvent) {
-    debugger
     if (
       this.href === '#hero' ||
       this.href === '#about' ||
