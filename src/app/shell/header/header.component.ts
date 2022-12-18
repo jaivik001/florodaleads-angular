@@ -17,6 +17,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
+      let navbar=document.getElementById('navbar')
+      if (navbar?.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = document.querySelector('.mobile-nav-toggle')
+        navbarToggle?.classList.toggle('bi-list')
+        navbarToggle?.classList.toggle('bi-x')
+      }
       this.isLeads = false;
       if (this.router.url.indexOf('mortgage-leads') > 1) {
         this.isLeads = true;
@@ -34,6 +41,7 @@ export class HeaderComponent implements OnInit {
         this.isLeads = true;
       }
     });
+
     if (this.router.url.indexOf('mortgage-leads') > 1) {
       this.isLeads = true;
       this.isMortageLeads = true;
