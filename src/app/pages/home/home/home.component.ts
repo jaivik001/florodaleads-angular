@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit ,AfterViewInit {
   ngOnInit(): void {
     AOS.init();
     require('../../../../assets/js/main.js');
+    let classEle = document.getElementById('home');
+    if(!classEle?.classList.contains('active')){
+      classEle?.classList.add('active');
+    }
   }
   
   ngAfterViewInit(): void {
@@ -24,6 +28,17 @@ export class HomeComponent implements OnInit ,AfterViewInit {
       document.body.scrollTop = 0;
      document.documentElement.scrollTop = 0;
     } 
+  }
+
+  ngOnDestroy(){
+    let activeClassEle = document.getElementById('ul')
+    let items:any = activeClassEle?.getElementsByClassName('active')
+    for (let i = 0; i < items.length; i++) {
+      let element = items[i];
+      element.classList.remove('active');
+  }
+    //items:any = document.getElementsByClassName('pac-item');
+        
   }
 
 }
